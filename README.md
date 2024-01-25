@@ -8,8 +8,6 @@ The aim of this repository is to document the code and our work on our CS 534 AI
  1. Unmasked face domain to masked face domain  
  2. Masked face domain to unmasked face domain  
 
-([Presentation](https://docs.google.com/presentation/d/1XSoOWRFtrMTeHUhrwKhRe_Uf_TKeRI3R/edit?usp=sharing&ouid=101007956401404885384&rtpof=true&sd=true)) ([Paper](https://drive.google.com/file/d/11DmVHPEXjDv80aXT96OrS3-N1nQVY50O/view?usp=sharing)) 
- 
  # Dataset
  
  We use 2 different data-sets and curate them according to our use-case:
@@ -92,9 +90,3 @@ We also use a quantitative metric in the form of FID score. The Frechet Inceptio
 Through the above training trials, we achieved the least FID<sub>AB</sub> of 17.07 with a generator model G<sub>AB</sub>, which was trained with the following values of hyper-parameters: batch size 16, instance normalization, linear learning policy and lsgan optimization loss. We also observe that the FID<sub>AB</sub> score ranges between 17.07 and 32.18. The best score of 17.07, coupled with small range means that the generator network G<sub>AB</sub> is finding it relatively easier to learn how to apply a fake mask onto an unmasked face, irrespective of the variations in the hyper parameters. Similarly, we achieved the least FID<sub>BA</sub> of 48.39 with a generator model G<sub>BA</sub>, which was trained with batch size 32, instance normalization, linear learning policy and vanilla optimization loss. The best score of 48.39 implies the generator network G<sub>BA</sub> is finding it slightly difficult to generate the masked area of the face. We also observe that FID<sub>BA</sub> score ranges between values 48.39 and 261.78, which implies the performance of the network varies significantly with change
 in hyper parameters.
 
-# References
-  1. https://github.com/cabani/MaskedFace-Net (for face masked images) - Most of the images in this dataset are not well masked. We will be only selecting the images which are properly masked.\
-  2. https://github.com/NVlabs/ffhq-dataset (for unmasked images) - Flickr-Faces-HQ (FFHQ) is a high-quality image dataset of 70,000 high-quality PNG images at 1024×1024 resolution of human faces.
-  3. https://towardsdatascience.com/demystifying-gans-cc1ac011355 
-  4. Cycle GAN paper: https://arxiv.org/abs/1703.10593
-  5. https://towardsdatascience.com/cycle-gan-with-pytorch-ebe5db947a99
